@@ -1,8 +1,13 @@
 //import { FC } from "react";
 import { ReactNode } from "react";
 
+type Todo = {  
+  id: string;
+  text: string;  
+};
+
 type TodoProps = {
-  items: Array<string>;
+  items: Todo[];
   bgColor: string;
   children: ReactNode;
 };
@@ -14,8 +19,8 @@ function Todos({ items, children, ...props }: TodoProps) {
     <>
       {children}
       <ul style={{ backgroundColor: props.bgColor }}>
-        {items.map((item, index) => (
-          <li key={index}>{item}</li>
+        {items.map((todo, index) => (
+          <li key={index}>{todo.text}</li>
         ))}
       </ul>
     </>
