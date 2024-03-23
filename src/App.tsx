@@ -10,9 +10,14 @@ const todos = [new Todo("Learn React"), new Todo("Learn Typescript")];
 console.log('todos: ', todos);
 
 function App() {
+
+  const addTodoHandler = (text: string) => {
+    console.log(`final text: ${text}`);
+  }
+
   return (
     <>
-      <NewTodo />
+      <NewTodo onAddTodo={addTodoHandler} />
       <Todos items={todos} />      
     </>
   );
