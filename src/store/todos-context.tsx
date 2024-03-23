@@ -28,13 +28,7 @@ export const TodosContextProvider = ({
   };
 
   const removeTodoHandler = (id: string) => {
-    setTodos((prevTodos) => {
-      const newTodos = prevTodos.filter((todo) => {
-        return todo.id !== id;
-      });
-
-      return newTodos;
-    });
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
   const contextValue = {
@@ -43,5 +37,9 @@ export const TodosContextProvider = ({
     removeTodo: removeTodoHandler,
   };
 
-  return <TodosContext.Provider value={contextValue}>{children}</TodosContext.Provider>;
+  return (
+    <TodosContext.Provider value={contextValue}>
+      {children}
+    </TodosContext.Provider>
+  );
 };
