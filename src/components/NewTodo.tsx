@@ -8,19 +8,14 @@ const NewTodo = (props: { onAddTodo: (text: string) => void }) => {
     console.log("submitting...");
     //const enteredText = todoTextInputRef.current!.value;
     const enteredText = todoTextInputRef.current?.value;
-    console.log(`enteredText: ${enteredText}`);
-
-    // if (enteredText?.trim().length === 0) {
-    //   // throw an error
-    //   return;
-    // }
+    console.log(`enteredText: ${enteredText}`);    
 
     if (enteredText && enteredText.trim().length > 0) {
       props.onAddTodo(enteredText);
     } else {
       return;
     }
-  }; // end of const NewTodo = (props)
+  }; // end of const NewTodo()
 
   return (
     <>
