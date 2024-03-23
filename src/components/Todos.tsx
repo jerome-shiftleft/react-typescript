@@ -1,10 +1,11 @@
 //import { FC } from "react";
 import { ReactNode } from "react";
+import Todo from "../models/todo";
 
-type Todo = {  
-  id: string;
-  text: string;  
-};
+// type Todo = {
+//   id: string;
+//   text: string;
+// };
 
 type TodoProps = {
   items: Todo[];
@@ -20,7 +21,10 @@ function Todos({ items, children, ...props }: TodoProps) {
       {children}
       <ul style={{ backgroundColor: props.bgColor }}>
         {items.map((todo) => (
-          <li key={todo.id}>{todo.text}</li>
+          <li key={todo.id}>
+            <span className="todo-id">{todo.id}</span>
+            {todo.text}
+          </li>
         ))}
       </ul>
     </>
