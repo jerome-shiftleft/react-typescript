@@ -19,7 +19,7 @@ function Todos({ items }: TodosProps) {
     <>     
       <ul className="todo-list">
         {items.map((todo) => (
-          <TodoItem key={todo.id} id={todo.id}>
+          <TodoItem key={todo.id}>
             {todo.text}
           </TodoItem>
         ))}

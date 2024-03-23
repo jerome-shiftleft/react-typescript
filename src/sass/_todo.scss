@@ -1,6 +1,9 @@
 .todo-list {
-  //list-style-type: none;
-  padding-inline-start: 1rem;
+  list-style-type: none;
+  padding-inline-start: 0;
+  > li {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .todo-id {
