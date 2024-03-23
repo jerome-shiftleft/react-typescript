@@ -1,11 +1,18 @@
 type TodoItemProps = {
-  children: React.ReactNode;
+  id: string;
+  text: string;
+  onRemoveTodo: (id: string) => void;
 };
 
-export default function TodoItem({ children }: TodoItemProps) {
+export default function TodoItem({ id, text, onRemoveTodo }: TodoItemProps) {
+
+  function removeTodoHandler() {
+    onRemoveTodo(id);
+  }
+
   return (
     <li>
-      <button>{children}</button>
+      <button onClick={removeTodoHandler}>{text}</button>
     </li>
   );
 }

@@ -4,10 +4,10 @@ import Todo from "./models/todo";
 import NewTodo from "./components/NewTodo";
 import "./sass/App.scss";
 
-function App() {
+export default function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  const addTodoHandler = (todoText: string) => {
+  function  addTodoHandler(todoText: string) {
     console.log(`final text: ${todoText}`);
     const newTodo = new Todo(todoText);
     setTodos((prevTodos) => {
@@ -16,12 +16,14 @@ function App() {
     });
   };
 
+  function removeTodoHandler(id: string) {
+    console.log(`removing ${id}`);
+  }
+
   return (
     <>
       <NewTodo onAddTodo={addTodoHandler} />
-      <Todos items={todos} />
+      <Todos items={todos} onRemoveTodo={removeTodoHandler} />
     </>
   );
 }
-
-export default App;

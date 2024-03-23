@@ -1,5 +1,5 @@
 //import { FC } from "react";
-import { ReactNode } from "react";
+//import { ReactNode } from "react";
 import Todo from "../models/todo";
 import TodoItem from "./TodoItem";
 
@@ -9,19 +9,23 @@ import TodoItem from "./TodoItem";
 // };
 
 type TodosProps = {
-  items: Todo[];  
+  items: Todo[];
+  onRemoveTodo: (id: string) => void;
 };
 
 // const Todos: FC<Props> = (props) => {
 // function Todos(props: TodoProps) {
-function Todos({ items }: TodosProps) {
+function Todos({ items, onRemoveTodo }: TodosProps) {
   return (
-    <>     
+    <>
       <ul className="todo-list">
         {items.map((todo) => (
-          <TodoItem key={todo.id}>
-            {todo.text}
-          </TodoItem>
+          <TodoItem
+            key={todo.id}
+            id={todo.id}
+            text={todo.text}
+            onRemoveTodo={onRemoveTodo}
+          />
         ))}
       </ul>
     </>
