@@ -19,7 +19,7 @@ function Todos({ items, children, ...props }: TodoProps) {
     <>
       {children}
       <ul style={{ backgroundColor: props.bgColor }}>
-        {items.map((todo, index) => (
+        {items.map((todo) => (
           <li key={todo.id}>{todo.text}</li>
         ))}
       </ul>
