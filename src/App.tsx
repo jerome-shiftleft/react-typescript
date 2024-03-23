@@ -26,4 +26,4 @@ export default function App() {
       <Todos items={todos} onRemoveTodo={removeTodoHandler} />
     </>
   );
-}
+} // end of export default function App(
