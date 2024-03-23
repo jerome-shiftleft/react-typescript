@@ -13,9 +13,7 @@ function App() {
   return (
     <>
       <NewTodo />
-      <Todos items={todos} bgColor="#666">
-        <h2>Todos</h2>
-      </Todos>
+      <Todos items={todos} />      
     </>
   );
 }

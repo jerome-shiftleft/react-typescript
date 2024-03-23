@@ -9,20 +9,17 @@ import TodoItem from "./TodoItem";
 // };
 
 type TodosProps = {
-  items: Todo[];
-  bgColor: string;
-  children: ReactNode;
+  items: Todo[];  
 };
 
 // const Todos: FC<Props> = (props) => {
 // function Todos(props: TodoProps) {
-function Todos({ items, children, ...props }: TodosProps) {
+function Todos({ items }: TodosProps) {
   return (
-    <>
-      {children}
-      <ul style={{ backgroundColor: props.bgColor }}>
+    <>     
+      <ul className="todo-list">
         {items.map((todo) => (
-          <TodoItem className="todo-id" key={todo.id} id={todo.id}>
+          <TodoItem key={todo.id} id={todo.id}>
             {todo.text}
           </TodoItem>
         ))}
