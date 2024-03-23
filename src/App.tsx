@@ -1,4 +1,5 @@
 import Generics from "./lectures/Generics";
+import Todos from "./components/Todos";
 import "./App.css";
 
 Generics();
@@ -6,7 +7,7 @@ Generics();
 function App() {
   return (
     <>
-      <p>Hello World!</p>
+      <Todos />
     </>
   );
 }
