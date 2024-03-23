@@ -1,6 +1,7 @@
 const NewTodo = () => {
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
+    console.log('submitting...');
   }
 
   return (
