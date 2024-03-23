@@ -4,10 +4,12 @@ import Todos from "./components/Todos";
 
 Generics();
 
+const todos = ["Learn React", "Learn TypeScript"];
+
 function App() {
   return (
     <>
-      <Todos items={["Learn React", "Learn TypeScript"]} bgColor="red">
+      <Todos items={todos} bgColor="red">
         <h2>Todos</h2>
       </Todos>
     </>
