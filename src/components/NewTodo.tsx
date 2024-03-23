@@ -12,6 +12,7 @@ const NewTodo = (props: { onAddTodo: (text: string) => void }) => {
 
     if (enteredText && enteredText.trim().length > 0) {
       props.onAddTodo(enteredText);
+      todoTextInputRef.current!.value = '';
     } else {
       return;
     }
