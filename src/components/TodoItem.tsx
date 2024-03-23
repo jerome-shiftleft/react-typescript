@@ -5,7 +5,6 @@ type TodoItemProps = {
 };
 
 export default function TodoItem({ id, text, onRemoveTodo }: TodoItemProps) {
-
   function removeTodoHandler() {
     onRemoveTodo(id);
   }
